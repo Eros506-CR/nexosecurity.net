@@ -125,30 +125,32 @@
   <p>Déjanos tus datos y te contactaremos pronto.</p>
 
   <form action="https://formspree.io/f/meeowgdo" method="POST">
-    
-    <label>
-      Nombre:
-      <input type="text" name="name" required>
-    </label>
 
-    <label>
-      Email:
-      <input type="email" name="email" required>
-    </label>
 
-    <label>
-      Empresa:
-      <input type="text" name="company">
-    </label>
-
-    <label>
-      Mensaje:
-      <textarea name="message" rows="5" required></textarea>
-    </label>
-
-    <!-- Anti-spam invisible -->
-    <input type="text" name="_gotcha" style="display:none">
-
+    <div class="mb-3">
+  <label for="nombre" class="form-label">Nombre: </label>
+  <input type="email" class="form-control" id="nombre" placeholder="Nombre completo">
+</div>
+<br>
+<div class="mb-3">
+  <label for="empresa" class="form-label">Empresa: </label>
+  <input type="email" class="form-control" id="empresa" placeholder="Empresa">
+</div>
+<br>
+<div class="mb-3">
+  <label for="telefono" class="form-label">Telefono: </label>
+  <input type="email" class="form-control" id="telefono" placeholder="Telefono">
+</div>
+<br>
+<div class="mb-3">
+  <label for="email" class="form-label">Email address: </label>
+  <input type="email" class="form-control" id="email" placeholder="mail@empresa.com">
+</div>
+<br>
+<div class="mb-3">
+  <label for="message" class="form-label"> Mensaje: </label>
+  <textarea class="form-control" id="message" rows="3"></textarea>
+</div>
     <button type="submit">Enviar mensaje</button>
   </form>
 </section>
