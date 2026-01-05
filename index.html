@@ -116,7 +116,44 @@
     es consistente con los riesgos que enfrenta.
   </p>
   <a href="mailto:info@nexosecurity.net" class="btn">Agendar conversación</a>
+
+  <a href="#contactoForm" class="btn">Solicitar evaluación inicial</a>
 </section>
+
+<section id="contactoForm">
+  <h2>Contáctanos</h2>
+  <p>Déjanos tus datos y te contactaremos pronto.</p>
+
+  <form action="https://formspree.io/f/XYZZABCD" method="POST">
+    
+    <label>
+      Nombre:
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      Email:
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Empresa:
+      <input type="text" name="company">
+    </label>
+
+    <label>
+      Mensaje:
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+
+    <!-- Anti-spam invisible -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</section>
+
+  
 
 <footer>
   <p><strong>Nexo Security</strong> – Consultoría en Seguridad Integral</p>
