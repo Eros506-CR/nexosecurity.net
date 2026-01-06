@@ -75,7 +75,34 @@
       display: none;
       z-index: 9999;
     } 
+
     
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 9999;
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float img {
+      width: 28px;
+    height: 28px;
+    filter: invert(1);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
     
   </style>
 </head>
@@ -267,6 +294,12 @@
   </script>
 
 
+<a href="https://wa.me/50683030640?text=Hola%20quisiera%20una%20evaluación%20de%20seguridad  
+   target="_blank" 
+   class="whatsapp-float"
+   aria-label="Contactar por WhatsApp">
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+</a>
 
   
 </body>
