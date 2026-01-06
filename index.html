@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-
-
-    <div class="header-container">
-
-    <div class="header-logo">
-      <img src="assets/nexo-logo.png" alt="Logo Nexo Security — Seguridad física y lógica para PYMES" class="logo">
+      
+    <div class="header-flex">
+        <div class="header-logo">
+            <img src="assets/nexo-logo.png" alt="Logo Nexo Security — Seguridad física y lógica para PYMES" class="logo">
+        </div>
+        <div class="header-text">
+            <h1>Seguridad integral diseñada para funcionar cuando más se necesita</h1>
+              <p>
+                  Reducimos riesgos legales, operativos y financieros mediante arquitectura profesional de seguridad física y digital.
+              </p>
+            <a href="#contacto" class="btn">Solicitar evaluación inicial</a>
+        </div>
     </div>
-
-    <div class="header-content">
-      <h1>Seguridad integral diseñada para funcionar cuando más se necesita</h1>
-      <p>
-        Reducimos riesgos legales, operativos y financieros mediante arquitectura profesional
-        de seguridad física y digital.
-      </p>
-      <a href="#contacto" class="btn">Solicitar evaluación inicial</a>
-    </div>
-
-  </div>
+    
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -30,41 +25,44 @@
       line-height: 1.6;
     }
 
-    .header-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-    
-    .header-logo {
-      flex-shrink: 0;
-    }
-    
-    .logo {
-      max-width: 180px;
-    }
-    
-    .header-content {
-      text-align: left;
-    }
-    
-    header {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 80px 20px;
-    }
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        text-align: center;
-      }
-    
-      .header-content {
-        text-align: center;
-      }
-    }
+      
+      header {
+          background: #0f172a;
+          color: #ffffff;
+          padding: 80px 20px;
+        }
+        
+        .header-flex {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          max-width: 1100px;
+          margin: auto;
+        }
+        
+        .header-logo {
+          flex-shrink: 0; /* evita que el logo se achique */
+        }
+        
+        .logo {
+          max-width: 180px;
+        }
+        
+        .header-text {
+          text-align: left;
+        }
+        
+        /* RESPONSIVE: en pantallas pequeñas adapts a columna */
+        @media (max-width: 768px) {
+          .header-flex {
+            flex-direction: column;
+            text-align: center;
+          }
+          .header-text {
+            text-align: center;
+          }
+        }
+
 
     
     section {
