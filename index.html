@@ -1,358 +1,296 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-      
-    <div class="header-flex">
-        <div class="header-logo">
-            <img src="assets/nexo-logo.png" alt="Logo Nexo Security — Seguridad física y lógica para PYMES" class="logo">
-        </div>
-        <div class="header-text">
-              <h1>Arquitectura de seguridad integral</h1>
-                  <p class="hero-sub">
-                  Diseñamos y gobernamos seguridad física y digital para organizaciones que no pueden fallar.
-                  </p>
+  <meta charset="UTF-8">
+  <title>Nexo Security | Arquitectura de Seguridad Integral</title>
 
-            <a href="#contacto" class="btn">Solicitar evaluación inicial</a>
-        </div>
-    </div>
-    
-  
+  <meta name="description"
+        content="Consultoría en arquitectura de seguridad física y digital. Reducimos riesgos operativos, legales y financieros para organizaciones que no pueden fallar.">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
+    /* =====================
+       BASE
+    ====================== */
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: #1f2933;
       line-height: 1.6;
+      background: #ffffff;
     }
 
-      
-      header {
-          background: #0f172a;
-          color: #ffffff;
-          padding: 80px 20px;
-        }
-        
-        .header-flex {
-          display: flex;
-          align-items: center;
-          gap: 40px;
-          max-width: 1100px;
-          margin: auto;
-        }
-        
-        .header-logo {
-          flex-shrink: 0; /* evita que el logo se achique */
-        }
-        
-        .logo {
-          max-width: 180px;
-        }
-        
-        .header-text {
-          text-align: left;
-        }
-        
-        /* RESPONSIVE: en pantallas pequeñas adapts a columna */
-        @media (max-width: 768px) {
-          .header-flex {
-            flex-direction: column;
-            text-align: center;
-          }
-          .header-text {
-            text-align: center;
-          }
-        }
-
-
-    
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
     h1, h2, h3 {
       color: #0f172a;
+      line-height: 1.25;
     }
+
+    p {
+      max-width: 720px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* =====================
+       HEADER / HERO
+    ====================== */
+    header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 90px 20px;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero img {
+      max-width: 180px;
+      flex-shrink: 0;
+    }
+
+    .hero-content h1 {
+      color: #ffffff;
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p {
+      color: #cbd5e1;
+      font-size: 1.2rem;
+      margin-bottom: 28px;
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
+      padding: 14px 30px;
       background: #2563eb;
       color: #ffffff;
       text-decoration: none;
       border-radius: 6px;
-      font-weight: bold;
+      font-weight: 600;
     }
-    .dark {
+
+    /* =====================
+       SECTIONS
+    ====================== */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section.dark {
       background: #f1f5f9;
     }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* =====================
+       CONTACT FORM
+    ====================== */
+    form {
+      max-width: 600px;
+      margin-top: 30px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 14px 28px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* =====================
+       FOOTER
+    ====================== */
     footer {
       background: #020617;
       color: #cbd5e1;
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
       font-size: 14px;
     }
 
-
-    
-    #success-banner {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #16a34a;
-      color: #ffffff;
-      text-align: center;
-      padding: 14px;
-      font-weight: bold;
-      display: none;
-      z-index: 9999;
-    }
-    #error-banner {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #dc2626;
-      color: #ffffff;
-      text-align: center;
-      padding: 14px;
-      font-weight: bold;
-      display: none;
-      z-index: 9999;
-    } 
-
-    
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 9999;
-      transition: transform 0.2s ease;
-    }
-        
-
-    .whatsapp-float img {
-      width: 28px;
-    height: 28px;
-    filter: invert(1);
+    footer a {
+      color: #cbd5e1;
+      text-decoration: none;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
+    /* =====================
+       RESPONSIVE
+    ====================== */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
-
-        .hero-sub {
-              font-size: 1.25rem;
-              color: #cbd5e1;
-              max-width: 600px;
-            }
-
-        
-    
   </style>
 </head>
+
 <body>
 
-<div id="success-banner">
-  ✔ Mensaje enviado correctamente. Nos pondremos en contacto pronto.
-</div>
+<!-- =====================
+     HERO
+====================== -->
+<header>
+  <div class="hero">
+    <img src="assets/nexo-logo.png" alt="Logo Nexo Security">
 
-  <div id="error-banner">
-  ❌ No se pudo enviar el mensaje. Intente nuevamente o contáctenos por WhatsApp.
-</div>
+    <div class="hero-content">
+      <h1>Arquitectura de seguridad integral</h1>
+      <p>
+        Diseñamos y gobernamos seguridad física y digital para organizaciones
+        que necesitan reducir riesgos operativos, legales y financieros.
+      </p>
+      <a href="#contacto" class="btn">Agendar evaluación inicial</a>
+    </div>
+  </div>
+</header>
 
-
+<!-- =====================
+     PROBLEMA
+====================== -->
 <section>
   <h2>El problema no es la tecnología. Es el riesgo.</h2>
   <p>
-    Muchas organizaciones invierten en cámaras, controles o sistemas aislados
-    sin una arquitectura clara. Cuando ocurre un incidente, la evidencia no es válida,
-    los accesos no están controlados y el riesgo recae sobre la organización y su dirección.
+    Muchas organizaciones implementan cámaras, controles de acceso o soluciones
+    digitales sin una arquitectura integrada. Cuando ocurre un incidente,
+    la evidencia no es confiable, los accesos no están controlados y el riesgo
+    recae directamente sobre la organización y su dirección.
   </p>
 </section>
 
-
+<!-- =====================
+     PROPUESTA DE VALOR
+====================== -->
 <section class="dark">
   <h2>No vendemos equipos. Reducimos riesgo.</h2>
   <p>
-    En Nexo Security aplicamos prácticas del mundo Enterprise (banca, corporaciones y entornos críticos),
-    adaptadas a organizaciones que necesitan tomar decisiones informadas y sostenibles.
+    Nexo Security aplica prácticas de seguridad utilizadas en entornos financieros
+    y corporativos, adaptadas a organizaciones que necesitan decisiones claras,
+    sostenibles y alineadas al negocio.
   </p>
 </section>
 
+<!-- =====================
+     SERVICIOS
+====================== -->
 <section>
   <h2>Servicios</h2>
 
-<h3>Diagnóstico de riesgo y madurez</h3>
-<p>
-Evaluación ejecutiva del estado actual de seguridad física y lógica, identificando brechas
-operativas, legales y de continuidad.
-</p>
-
-
-  <h3>Arquitectura y Diseño de Seguridad Integral</h3>
+  <h3>Diagnóstico de riesgo y madurez</h3>
   <p>
-    Definición de la arquitectura objetivo de seguridad: CCTV, control de accesos,
-    segmentación de red y accesos remotos seguros. Incluye un roadmap claro de mejora
-    alineado a las necesidades del negocio.
+    Evaluación ejecutiva del estado actual de seguridad física y digital,
+    identificando brechas operativas, legales y de continuidad.
   </p>
 
-  <h3>Implementación y Gobierno</h3>
+  <h3>Arquitectura y diseño de seguridad</h3>
   <p>
-    Dirección técnica de la implementación, validación de proveedores y establecimiento
-    de un modelo de gobierno continuo que asegure que la seguridad funcione correctamente
-    en el tiempo.
+    Definición de la arquitectura objetivo de seguridad, incluyendo CCTV,
+    control de accesos, redes y accesos remotos seguros, con un roadmap claro
+    de mejora.
+  </p>
+
+  <h3>Implementación y gobierno</h3>
+  <p>
+    Acompañamiento técnico, validación de proveedores y establecimiento de un
+    modelo de gobierno que garantice la efectividad de la seguridad en el tiempo.
   </p>
 </section>
 
+<!-- =====================
+     DIFERENCIADORES
+====================== -->
 <section class="dark">
   <h2>Por qué organizaciones confían en Nexo Security</h2>
   <ul>
-    <li>Experiencia en entornos financieros y corporativos</li>
+    <li>Más de 15 años de experiencia en entornos corporativos y financieros</li>
     <li>Independencia total de marcas y proveedores</li>
     <li>Enfoque en riesgo, no en tecnología</li>
-    <li>Documentación clara para juntas y auditorías</li>
+    <li>Documentación clara para juntas directivas y auditorías</li>
     <li>Visión integrada: legal, operativa y tecnológica</li>
   </ul>
 </section>
 
-
+<!-- =====================
+     CONTACTO
+====================== -->
 <section id="contacto">
-  <h2>¿Su organización está realmente protegida?</h2>
+  <h2>Conversemos sobre su nivel de riesgo</h2>
   <p>
-    Solicite una conversación inicial de 20 minutos para evaluar si su nivel actual de seguridad
-    es consistente con los riesgos que enfrenta.
+    Sesión inicial de 20 minutos para entender su contexto y evaluar
+    si su modelo actual de seguridad es adecuado.
   </p>
 
-  <h2>Contáctanos</h2>
-  <p>Déjanos tus datos y te contactaremos pronto.</p>
+  <form action="https://formspree.io/f/meeowgdo" method="POST">
+    <label>Nombre</label>
+    <input type="text" name="nombre" required>
 
-  <form id="contact-form" action="https://formspree.io/f/meeowgdo" method="POST">
+    <label>Empresa</label>
+    <input type="text" name="empresa">
 
+    <label>Email</label>
+    <input type="email" name="email" required>
 
-    <div class="mb-3">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
-    </div>
+    <label>Mensaje</label>
+    <textarea name="message" rows="4"></textarea>
 
-    <br>
-
-    <div class="mb-3">
-      <label for="empresa">Empresa:</label>
-      <input type="text" id="empresa" name="empresa" placeholder="Empresa">
-    </div>
-
-    <br>
-
-    <div class="mb-3">
-      <label for="telefono">Teléfono:</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
-    </div>
-
-    <br>
-
-    <div class="mb-3">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="mail@empresa.com" required>
-    </div>
-
-    <br>
-
-    <div class="mb-3">
-      <label for="message">Mensaje:</label>
-      <textarea id="message" name="message" rows="4" placeholder="Cuéntenos brevemente su necesidad" required></textarea>
-    </div>
-
-    <div>
     <input type="hidden" name="_subject" value="Nuevo contacto desde NexoSecurity.net">
-</div>
-    
-    <!-- Anti-spam -->
     <input type="text" name="_gotcha" style="display:none">
 
-    <br>
-
-    <button type="submit">Enviar mensaje</button>
-
+    <button type="submit">Enviar solicitud</button>
   </form>
 </section>
 
-
-  
-
+<!-- =====================
+     FOOTER
+====================== -->
 <footer>
   <p><strong>Nexo Security</strong> – Consultoría en Seguridad Integral</p>
   <p>Costa Rica</p>
   <p>
-    📞 / WhatsApp: <a href="https://wa.me/50683030640" style="color:#cbd5e1;">+506 8303 0640</a><br>
-    ✉️ info@nexosecurity.net
+    WhatsApp: <a href="https://wa.me/50683030640">+506 8303 0640</a><br>
+    Email: info@nexosecurity.net
   </p>
 </footer>
 
-  
-  <script>
-    const form = document.getElementById("contact-form");
-    const successBanner = document.getElementById("success-banner");
-    const errorBanner = document.getElementById("error-banner");
-  
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-  
-      const formData = new FormData(form);
-  
-      fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          errorBanner.style.display = "none";
-          successBanner.style.display = "block";
-          form.reset();
-  
-          setTimeout(() => {
-            successBanner.style.display = "none";
-          }, 4000);
-        } else {
-          successBanner.style.display = "none";
-          errorBanner.style.display = "block";
-  
-          setTimeout(() => {
-            errorBanner.style.display = "none";
-          }, 5000);
-        }
-      }).catch(() => {
-        successBanner.style.display = "none";
-        errorBanner.style.display = "block";
-  
-        setTimeout(() => {
-          errorBanner.style.display = "none";
-        }, 5000);
-      });
-    });
-  </script>
-
-
-<a href="https://wa.me/50683030640?text=Hola%20quisiera%20una%20evaluación%20de%20seguridad  
-   target="_blank" 
-   class="whatsapp-float"
-   aria-label="Contactar por WhatsApp">
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
-</a>
-
-  
 </body>
 </html>
