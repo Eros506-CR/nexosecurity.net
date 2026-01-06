@@ -48,21 +48,34 @@
     }
 
 
+    
     #success-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #16a34a;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px;
-  font-weight: bold;
-  display: none;
-  z-index: 9999;
-}
-
-
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #16a34a;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px;
+      font-weight: bold;
+      display: none;
+      z-index: 9999;
+    }
+    #error-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #dc2626;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px;
+      font-weight: bold;
+      display: none;
+      z-index: 9999;
+    } 
+    
     
   </style>
 </head>
@@ -70,6 +83,10 @@
 
 <div id="success-banner">
   ✔ Mensaje enviado correctamente. Nos pondremos en contacto pronto.
+</div>
+
+  <div id="error-banner">
+  ❌ No se pudo enviar el mensaje. Intente nuevamente o contáctenos por WhatsApp.
 </div>
 
   
@@ -142,7 +159,7 @@
   <h2>Contáctanos</h2>
   <p>Déjanos tus datos y te contactaremos pronto.</p>
 
-  <form id="contact-form" action="https://formspree.io/f/meeowgdo" method="POST">
+  <form id="contact-form" action="https://formspree.io/f/meeowgdob" method="POST">
 
 
     <div class="mb-3">
@@ -204,37 +221,52 @@
   </p>
 </footer>
 
-<script>
-  const form = document.getElementById("contact-form");
-  const banner = document.getElementById("success-banner");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        banner.style.display = "block";
-        form.reset();
-
+  
+  <script>
+    const form = document.getElementById("contact-form");
+    const successBanner = document.getElementById("success-banner");
+    const errorBanner = document.getElementById("error-banner");
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const formData = new FormData(form);
+  
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          errorBanner.style.display = "none";
+          successBanner.style.display = "block";
+          form.reset();
+  
+          setTimeout(() => {
+            successBanner.style.display = "none";
+          }, 4000);
+        } else {
+          successBanner.style.display = "none";
+          errorBanner.style.display = "block";
+  
+          setTimeout(() => {
+            errorBanner.style.display = "none";
+          }, 5000);
+        }
+      }).catch(() => {
+        successBanner.style.display = "none";
+        errorBanner.style.display = "block";
+  
         setTimeout(() => {
-          banner.style.display = "none";
-        }, 4000);
-      } else {
-        alert("Ocurrió un error al enviar el mensaje. Intente nuevamente.");
-      }
-    }).catch(() => {
-      alert("Error de conexión. Intente más tarde.");
+          errorBanner.style.display = "none";
+        }, 5000);
+      });
     });
-  });
-</script>
+  </script>
+
+
 
   
 </body>
