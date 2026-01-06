@@ -162,6 +162,32 @@
         margin-right: auto;
       }
     }
+
+    /* =====================
+         WHATSAPP FLOAT
+    ===================== */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background: #25D366;
+      border-radius: 50%;
+      padding: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+    
+    .whatsapp-float img {
+      display: block;
+    }
+
+    
   </style>
 </head>
 
@@ -292,5 +318,18 @@
   </p>
 </footer>
 
+
+  <a href="https://wa.me/50683030640"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Contactar por WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+       alt="WhatsApp"
+       width="52"
+       height="52">
+</a>
+
+
+  
 </body>
 </html>
