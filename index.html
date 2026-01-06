@@ -2,13 +2,25 @@
 <html lang="es">
 <head>
 
-  <img src="assets/nexo-logo.png" 
-     alt="Logo Nexo Security — Seguridad física y lógica para PYMES" 
-     class="logo">
+
+
+    <div class="header-container">
+
+    <div class="header-logo">
+      <img src="assets/nexo-logo.png" alt="Logo Nexo Security — Seguridad física y lógica para PYMES" class="logo">
+    </div>
+
+    <div class="header-content">
+      <h1>Seguridad integral diseñada para funcionar cuando más se necesita</h1>
+      <p>
+        Reducimos riesgos legales, operativos y financieros mediante arquitectura profesional
+        de seguridad física y digital.
+      </p>
+      <a href="#contacto" class="btn">Solicitar evaluación inicial</a>
+    </div>
+
+  </div>
   
-  <meta charset="UTF-8">
-  <title>Nexo Security | Seguridad Integral y Gestión de Riesgos</title>
-  <meta name="description" content="Consultoría en seguridad integral para organizaciones. Reducimos riesgos legales, operativos y financieros mediante arquitectura profesional de seguridad física y digital.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -17,23 +29,43 @@
       color: #1f2933;
       line-height: 1.6;
     }
+
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .header-logo {
+      flex-shrink: 0;
+    }
+    
+    .logo {
+      max-width: 180px;
+    }
+    
+    .header-content {
+      text-align: left;
+    }
+    
     header {
       background: #0f172a;
       color: #ffffff;
       padding: 80px 20px;
-      text-align: center;
     }
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
     
-    .logo {
-      display: block;
-      margin: 0 auto 20px auto;
-      max-width: 190px;
-    }
-    @media (max-width: 600px) {
-      .logo {
-      max-width: 170px;
+      .header-content {
+        text-align: center;
       }
     }
+
     
     section {
       padding: 60px 20px;
@@ -119,11 +151,6 @@
     .whatsapp-float:hover {
       transform: scale(1.1);
     }
-
-
-
-
-
     
   </style>
 </head>
