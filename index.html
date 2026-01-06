@@ -187,11 +187,43 @@
       display: block;
     }
 
+    /* =====================
+   FORM ALERTS
+===================== */
+    .alert {
+  
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px;
+      text-align: center;
+      font-weight: 600;
+      color: white;
+      z-index: 1000;
+    }
+    
+    .alert.success {
+      background: #16a34a; /* verde */
+    }
+    
+    .alert.error {
+      background: #dc2626; /* rojo */
+    }
+    
+    .hidden {
+      display: none;
+    }
+
     
   </style>
 </head>
 
 <body>
+
+  
+  <div id="form-alert" class="alert hidden"></div>
+
 
 <!-- =====================
      HERO
@@ -286,7 +318,8 @@
     si su modelo actual de seguridad es adecuado.
   </p>
 
-  <form action="https://formspree.io/f/meeowgdo" method="POST">
+  <form id="contact-form" action="https://formspree.io/f/meeowgdo" method="POST">
+
     <label>Nombre</label>
     <input type="text" name="nombre" required>
 
@@ -329,6 +362,47 @@
        height="52">
 </a>
 
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const alertBox = document.getElementById("form-alert");
+  
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+  
+      const data = new FormData(form);
+  
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+  
+        if (response.ok) {
+          showAlert("Mensaje enviado correctamente. Nos pondremos en contacto pronto.", "success");
+          form.reset();
+        } else {
+          showAlert("Ocurrió un error. Intente nuevamente.", "error");
+        }
+  
+      } catch (error) {
+        showAlert("Error de conexión. Intente más tarde.", "error");
+      }
+    });
+  
+    function showAlert(message, type) {
+      alertBox.textContent = message;
+      alertBox.className = `alert ${type}`;
+      alertBox.classList.remove("hidden");
+  
+      setTimeout(() => {
+        alertBox.classList.add("hidden");
+      }, 4000);
+    }
+  </script>
 
   
 </body>
