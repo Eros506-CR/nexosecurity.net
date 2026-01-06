@@ -121,34 +121,49 @@
 
   <form action="https://formspree.io/f/meeowgdo" method="POST">
 
+    <div class="mb-3">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+    </div>
+
+    <br>
 
     <div class="mb-3">
-  <label for="nombre" class="form-label">Nombre: </label>
-  <input type="email" class="form-control" id="nombre" placeholder="Nombre completo">
-</div>
-<br>
-<div class="mb-3">
-  <label for="empresa" class="form-label">Empresa: </label>
-  <input type="email" class="form-control" id="empresa" placeholder="Empresa">
-</div>
-<br>
-<div class="mb-3">
-  <label for="telefono" class="form-label">Telefono: </label>
-  <input type="email" class="form-control" id="telefono" placeholder="Telefono">
-</div>
-<br>
-<div class="mb-3">
-  <label for="email" class="form-label">Email address: </label>
-  <input type="email" class="form-control" id="email" placeholder="mail@empresa.com">
-</div>
-<br>
-<div class="mb-3">
-  <label for="message" class="form-label"> Mensaje: </label>
-  <textarea class="form-control" id="message" rows="3"></textarea>
-</div>
+      <label for="empresa">Empresa:</label>
+      <input type="text" id="empresa" name="empresa" placeholder="Empresa">
+    </div>
+
+    <br>
+
+    <div class="mb-3">
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+    </div>
+
+    <br>
+
+    <div class="mb-3">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="mail@empresa.com" required>
+    </div>
+
+    <br>
+
+    <div class="mb-3">
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Cuéntenos brevemente su necesidad" required></textarea>
+    </div>
+
+    <!-- Anti-spam -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <br>
+
     <button type="submit">Enviar mensaje</button>
+
   </form>
 </section>
+
 
   
 
